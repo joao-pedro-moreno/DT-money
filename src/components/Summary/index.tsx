@@ -6,6 +6,7 @@ import {
 import { SummaryCard, SummaryContainer } from './styles'
 import { useTheme } from 'styled-components'
 import { useTransaction } from '../../hook/useTransaction'
+import { priceFormatter } from '../../utils/formatter'
 
 export function Summary() {
   const theme = useTheme()
@@ -38,7 +39,7 @@ export function Summary() {
           <ArrowCircleUp size={32} color={theme['green-300']} />
         </header>
 
-        <strong>R$ {summary.income}</strong>
+        <strong>{priceFormatter.format(summary.income)}</strong>
       </SummaryCard>
 
       <SummaryCard>
@@ -47,7 +48,7 @@ export function Summary() {
           <ArrowCircleDown size={32} color={theme['red-300']} />
         </header>
 
-        <strong>R$ {summary.outcome}</strong>
+        <strong>{priceFormatter.format(summary.outcome)}</strong>
       </SummaryCard>
 
       <SummaryCard variant="green">
@@ -56,7 +57,7 @@ export function Summary() {
           <CurrencyDollar size={32} color={theme.white} />
         </header>
 
-        <strong>R$ {summary.total}</strong>
+        <strong>{priceFormatter.format(summary.total)}</strong>
       </SummaryCard>
     </SummaryContainer>
   )
