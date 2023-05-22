@@ -1,12 +1,3 @@
 {
-  "transactions": [
-    {
-      "description": "Academia",
-      "price": 120,
-      "category": "Boleto",
-      "type": "outcome",
-      "createdAt": "2023-05-17T18:43:01.477Z",
-      "id": 1
-    }
-  ]
+  "transactions": []
 }
